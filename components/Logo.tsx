@@ -19,7 +19,7 @@ function Logo({ inHeader, inFooter }: IProps) {
             inFooter && "text-gray-600"
           }`}
         >
-          Coder's Blog
+          Coder&apos;s Blog
         </span>
       </div>
     </Link>

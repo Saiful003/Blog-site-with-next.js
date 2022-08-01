@@ -12,7 +12,7 @@ function Footer() {
           <Logo inFooter />
         </div>
         <span className="text-sm font-medium">
-          {/* 2022 Coder's blog - @coderBlog's */}
+          2022 Coder&apos;s blog - @coderBlog&apos;s
         </span>
       </div>
       <div className="flex justify-center gap-2">
