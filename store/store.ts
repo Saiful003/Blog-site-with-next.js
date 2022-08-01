@@ -1,7 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
+import themeSlice from "../feature/themeSlice";
 
 const store = configureStore({
-  reducer: {},
+  reducer: {
+    siteTheme: themeSlice,
+  },
 });
 export default store;
 // Infer the `RootState` and `AppDispatch` types from the store itself
