@@ -11,7 +11,7 @@ function Card({ image }: IProps) {
   return (
     <Link href="/">
       <div>
-        <Image src={image} layout="responsive" />
+        <Image src={image} layout="responsive" alt="image" />
         <div>
           <p className="my-2 text-sm text-gray-400"> August 1,2022 </p>
           <h2 className="text-3xl font-medium mb-3">
