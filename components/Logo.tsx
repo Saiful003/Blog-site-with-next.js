@@ -12,7 +12,7 @@ function Logo({ inHeader, inFooter }: IProps) {
     <Link href="/">
       <div className="flex items-center gap-2 cursor-pointer">
         <div className="w-10">
-          <Image src={logo} layout="responsive" />
+          <Image src={logo} layout="responsive" alt="logo" />
         </div>
         <span
           className={`text-medium font-bold ${inHeader && "text-emerald-400"} ${
