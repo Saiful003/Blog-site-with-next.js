@@ -11,7 +11,6 @@ function Layout({ children }: props) {
   return (
     <Container>
       <Header />
-      <CategoriesNav />
       <main className="my-4">{children}</main>
       <Footer />
     </Container>

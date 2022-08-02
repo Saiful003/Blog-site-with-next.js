@@ -5,12 +5,13 @@ import type { StaticImageData } from "next/image";
 
 interface IProps {
   image: StaticImageData;
+  postSlug: string;
 }
 
-function Card({ image }: IProps) {
+function Card({ image, postSlug }: IProps) {
   return (
-    <Link href="/">
-      <div>
+    <Link href={`/posts/${postSlug}`}>
+      <a>
         <Image src={image} layout="responsive" alt="image" />
         <div>
           <p className="my-2 text-sm text-gray-400"> August 1,2022 </p>
@@ -23,7 +24,7 @@ function Card({ image }: IProps) {
             dicta quaerat, dolorum atque velit iure laboriosam id. Possimus
           </p>
         </div>
-      </div>
+      </a>
     </Link>
   );
 }

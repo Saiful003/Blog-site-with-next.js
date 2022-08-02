@@ -36,7 +36,6 @@ function Button({
               noMoreInNext || noMoreInPrevious,
           }
         )}
-        href="#"
       >
         {children}
       </a>

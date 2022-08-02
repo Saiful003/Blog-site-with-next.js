@@ -12,7 +12,7 @@ function Header() {
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <header className="mb-4 border-b">
+    <header className="mb-4 border-b sticky top-0 z-50 bg-white">
       <div className="h-[80px] relative flex items-center justify-between">
         <Logo inHeader />
         <nav className="hidden lg:block">
