@@ -4,11 +4,11 @@ import { useTheme } from "../hooks/useTheme";
 interface IProps {
   icon: React.ReactNode;
   isRightIcon?: boolean;
-  text: string;
+  text?: string;
   onClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void;
 }
 
-function IconButton({ icon, isRightIcon, text, onClick }: IProps) {
+function IconButton({ icon, isRightIcon, text = "", onClick }: IProps) {
   return (
     <a
       onClick={onClick}
@@ -17,7 +17,7 @@ function IconButton({ icon, isRightIcon, text, onClick }: IProps) {
       }`}
     >
       <div> {icon} </div>
-      <div> {text} </div>
+      <div className={`${text === "" && "hidden"}`}> {text} </div>
     </a>
   );
 }

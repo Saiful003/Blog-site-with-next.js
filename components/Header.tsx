@@ -38,12 +38,20 @@ function Header() {
           <Button link="/signin" fill>
             Sign up
           </Button>
-          <IconButton
-            icon={isLightTheme ? <MdLightMode /> : <MdDarkMode />}
-            text={isLightTheme ? "Light" : "Dark"}
-            isRightIcon
-            onClick={handleSwitchTheme}
-          />
+          <div className="hidden lg:block">
+            <IconButton
+              icon={isLightTheme ? <MdLightMode /> : <MdDarkMode />}
+              text={isLightTheme ? "Light" : "Dark"}
+              isRightIcon
+              onClick={handleSwitchTheme}
+            />
+          </div>
+          <div className="lg:hidden">
+            <IconButton
+              icon={isLightTheme ? <MdLightMode /> : <MdDarkMode />}
+              onClick={handleSwitchTheme}
+            />
+          </div>
           <div className="lg:hidden">
             {isMenuOpen ? (
               <MdClose
