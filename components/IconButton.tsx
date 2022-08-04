@@ -17,7 +17,7 @@ function IconButton({ icon, isRightIcon, text = "", onClick }: IProps) {
       }`}
     >
       <div> {icon} </div>
-      <div className={`${text === "" && "hidden"}`}> {text} </div>
+      <div className="hidden lg:block"> {text} </div>
     </a>
   );
 }
