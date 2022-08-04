@@ -1,6 +1,7 @@
 import React from "react";
 import classNames from "classnames";
 import Link from "next/link";
+import { useTheme } from "../hooks/useTheme";
 
 interface IProps {
   children: React.ReactNode;
@@ -19,6 +20,7 @@ function Button({
   noMoreInNext,
   noMoreInPrevious,
 }: IProps) {
+  const { isLightTheme } = useTheme();
   return (
     <Link href={link}>
       <a
@@ -28,8 +30,11 @@ function Button({
             "bg-emerald-400 text-white hover:bg-emerald-500": fill,
           },
           {
-            "border text-gray-500 border-white hover:border-emerald-400":
-              normal,
+            [` ${
+              isLightTheme
+                ? "border border-white text-gray-500"
+                : "border border-black text-white"
+            }  hover:border-emerald-400`]: normal,
           },
           {
             "bg-emerald-200 cursor-not-allowed text-white":

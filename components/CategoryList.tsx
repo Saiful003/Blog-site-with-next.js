@@ -45,7 +45,9 @@ function CategoryList({ slug }: IProps) {
   if (lowerCaseSlug === "recent") {
     return (
       <li className={setListClass({ forRecent: true })}>
-        <Link href="/">{slug}</Link>
+        <Link href="/">
+          <a>{slug}</a>
+        </Link>
       </li>
     );
   }

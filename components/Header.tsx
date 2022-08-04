@@ -2,17 +2,25 @@ import Button from "../components/Button";
 import NavLink from "../components/NavLink";
 import Logo from "./Logo";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { MdDarkMode, MdLightMode } from "react-icons/md";
 import { MdClose } from "react-icons/md";
 import { useState } from "react";
+import IconButton from "./IconButton";
+import { useTheme } from "../hooks/useTheme";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { isLightTheme, handleSwitchTheme } = useTheme();
   // menu functions
   const openMenu = () => setIsMenuOpen(true);
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <header className="mb-4 border-b sticky top-0 z-50 bg-white">
+    <header
+      className={`mb-4 border-b sticky top-0 z-50 ${
+        isLightTheme ? "bg-white" : "bg-black"
+      }`}
+    >
       <div className="h-[80px] relative flex items-center justify-between">
         <Logo inHeader />
         <nav className="hidden lg:block">
@@ -30,6 +38,12 @@ function Header() {
           <Button link="/signin" fill>
             Sign up
           </Button>
+          <IconButton
+            icon={isLightTheme ? <MdLightMode /> : <MdDarkMode />}
+            text={isLightTheme ? "Light" : "Dark"}
+            isRightIcon
+            onClick={handleSwitchTheme}
+          />
           <div className="lg:hidden">
             {isMenuOpen ? (
               <MdClose

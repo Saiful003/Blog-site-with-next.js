@@ -1,5 +1,7 @@
+import classNames from "classnames";
 import Link from "next/link";
 import React from "react";
+import { useTheme } from "../hooks/useTheme";
 
 function NavLink({
   children,
@@ -8,16 +10,24 @@ function NavLink({
   children: React.ReactNode;
   inMobile?: boolean;
 }) {
+  const { isLightTheme } = useTheme();
+
   return (
-    <li
-      className={`list-none ${
-        inMobile && "pl-2 border-l-[3px] border-l-emerald-500"
-      } `}
-    >
-      <a className="text-md font-medium text-gray-600" href="#">
+    <Link href="/">
+      <a
+        className={classNames(
+          "text-md font-medium",
+          {
+            [`pl-2 border-l-[3px] border-l-emerald-500 text-gray-600`]:
+              inMobile,
+          },
+          { "text-gray-600": isLightTheme },
+          { "text-white": !isLightTheme }
+        )}
+      >
         {children}
       </a>
-    </li>
+    </Link>
   );
 }
 

@@ -1,3 +1,4 @@
+import { useTheme } from "../hooks/useTheme";
 import CategoriesNav from "./CategoriesNav";
 import Container from "./Container";
 import Footer from "./Footer";
@@ -8,12 +9,15 @@ type props = {
 };
 
 function Layout({ children }: props) {
+  const { isLightTheme } = useTheme();
   return (
-    <Container>
-      <Header />
-      <main className="my-4">{children}</main>
-      <Footer />
-    </Container>
+    <div className={`${isLightTheme ? " bg-white" : " bg-black"}`}>
+      <Container>
+        <Header />
+        <main className="my-4">{children}</main>
+        <Footer />
+      </Container>
+    </div>
   );
 }
 

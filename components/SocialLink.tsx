@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 interface IProps {
@@ -6,9 +7,9 @@ interface IProps {
 
 function SocialLink({ icon }: IProps) {
   return (
-    <a className="text-gray-500" href="#">
-      {icon}
-    </a>
+    <Link href="/">
+      <a className="text-gray-500">{icon}</a>
+    </Link>
   );
 }
 
