@@ -32,16 +32,17 @@ function Header() {
           </ul>
         </nav>
         <div className="flex gap-2 items-center">
-          <Button link="/login" normal>
+          <Button link="/auth/login" normal>
             Log in
           </Button>
-          <Button link="/signin" fill>
+          <Button link="/auth/signin" fill>
             Sign up
           </Button>
           <IconButton
             icon={isLightTheme ? <MdLightMode /> : <MdDarkMode />}
             text={isLightTheme ? "Light" : "Dark"}
             isRightIcon
+            isNoTextInMobile
             onClick={handleSwitchTheme}
           />
           <div className="lg:hidden">

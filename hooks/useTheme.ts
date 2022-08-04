@@ -6,6 +6,7 @@ export const useTheme = () => {
     siteTheme: { isLightTheme },
   } = useAppSelector((state) => state);
   const dispatch = useAppDispatch();
+
   //dispatch actions
   const handleSwitchTheme = () => {
     dispatch(switchTheme());

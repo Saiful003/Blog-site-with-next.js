@@ -2,8 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import type { StaticImageData } from "next/image";
-import IconButton from "./IconButton";
-import { AiFillAccountBook } from "react-icons/ai";
 import { useTheme } from "../hooks/useTheme";
 import classNames from "classnames";
 
