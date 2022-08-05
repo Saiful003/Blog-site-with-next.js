@@ -9,6 +9,7 @@ interface IProps {
   normal?: boolean;
   noMoreInNext?: boolean;
   noMoreInPrevious?: boolean;
+  type?: string;
   link?: string;
 }
 
@@ -19,11 +20,13 @@ function Button({
   link = "",
   noMoreInNext,
   noMoreInPrevious,
+  type,
 }: IProps) {
   const { isLightTheme } = useTheme();
   return (
     <Link href={link}>
       <a
+        type={type}
         className={classNames(
           "font-medium py-1 px-6 rounded-sm",
           {

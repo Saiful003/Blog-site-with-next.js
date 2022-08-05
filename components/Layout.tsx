@@ -11,10 +11,10 @@ type props = {
 function Layout({ children }: props) {
   const { isLightTheme } = useTheme();
   return (
-    <div className={`${isLightTheme ? " bg-white" : " bg-black"}`}>
+    <div className={`${isLightTheme ? "bg-white" : "bg-black"}`}>
       <Container>
         <Header />
-        <main className="my-4">{children}</main>
+        <main>{children}</main>
         <Footer />
       </Container>
     </div>

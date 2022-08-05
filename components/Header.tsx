@@ -17,7 +17,7 @@ function Header() {
 
   return (
     <header
-      className={`mb-4 border-b sticky top-0 z-50 ${
+      className={`border-b sticky top-0 z-50 ${
         isLightTheme ? "bg-white" : "bg-black"
       }`}
     >
@@ -63,7 +63,7 @@ function Header() {
         </div>
 
         {isMenuOpen && (
-          <div className="absolute top-full left-0 right-0 lg:hidden p-3 z-20 bg-neutral-100 flex flex-col gap-4">
+          <div className="absolute top-full left-0 right-0 lg:hidden p-3 z-40 bg-neutral-100 flex flex-col gap-4">
             <NavLink inMobile> Products </NavLink>
             <NavLink inMobile> Pricing </NavLink>
             <NavLink inMobile> Docs </NavLink>
