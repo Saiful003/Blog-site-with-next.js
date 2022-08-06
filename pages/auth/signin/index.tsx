@@ -28,7 +28,7 @@ function SignIn({ data }: IProps) {
   const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
 
   return (
-    <LogSignTemp role={data.title}>
+    <LogSignTemp role="Please Sign In">
       <FormHolder>
         <form
           className=" flex flex-col gap-3"

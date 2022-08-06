@@ -28,7 +28,7 @@ export default function Login({ data }: IProps) {
 
   return (
     <>
-      <LogSignTemp role={data.title}>
+      <LogSignTemp role="Login Please">
         <FormHolder>
           <form
             className="flex flex-col gap-3"
