@@ -2,7 +2,6 @@ import Input from "../../../components/Form/Input";
 import { useForm, SubmitHandler } from "react-hook-form";
 import FormHolder from "../../../components/Form/FormHolder";
 import LogSignTemp from "../../../components/Form/LogSignTemp";
-import { IRes } from "../../api/signin";
 import CustomInput from "../../../components/Form/Input";
 
 interface Inputs {
@@ -10,11 +9,7 @@ interface Inputs {
   password: string | number;
 }
 
-interface IProps {
-  data: IRes;
-}
-
-export default function Login({ data }: IProps) {
+export default function Login() {
   const {
     handleSubmit,
     register,
@@ -28,7 +23,7 @@ export default function Login({ data }: IProps) {
 
   return (
     <>
-      <LogSignTemp role="Login Please">
+      <LogSignTemp role="Please Login">
         <FormHolder>
           <form
             className="flex flex-col gap-3"
@@ -63,13 +58,4 @@ export default function Login({ data }: IProps) {
       </LogSignTemp>
     </>
   );
-}
-
-export async function getStaticProps() {
-  const res = await fetch("http://localhost:3000/api/login");
-  const data = await res.json();
-
-  return {
-    props: { data },
-  };
 }

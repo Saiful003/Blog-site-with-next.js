@@ -3,7 +3,6 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import FormHolder from "../../../components/Form/FormHolder";
 import CustomInput from "../../../components/Form/Input";
 import LogSignTemp from "../../../components/Form/LogSignTemp";
-import { IRes } from "../../api/signin";
 
 interface Inputs {
   firstname: string;
@@ -11,11 +10,7 @@ interface Inputs {
   email: string;
 }
 
-interface IProps {
-  data: IRes;
-}
-
-function SignIn({ data }: IProps) {
+function SignIn() {
   const {
     register,
     handleSubmit,
@@ -74,15 +69,6 @@ function SignIn({ data }: IProps) {
       </FormHolder>
     </LogSignTemp>
   );
-}
-
-export async function getStaticProps() {
-  const res = await fetch("http://localhost:3000/api/signin");
-  const data = await res.json();
-
-  return {
-    props: { data },
-  };
 }
 
 export default SignIn;
