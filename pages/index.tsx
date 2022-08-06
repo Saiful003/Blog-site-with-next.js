@@ -21,13 +21,13 @@ const Home: NextPage = () => {
       </Head>
       <CategoriesNav />
       <div className={classes.grid}>
-        <Card image={img1} postSlug="Your are very awesome" />
-        <Card image={img2} postSlug="Your are very awesome" />
-        <Card image={img3} postSlug="Your are very awesome" />
-        <Card image={img4} postSlug="Your are very awesome" />
-        <Card image={img5} postSlug="Your are very awesome" />
-        <Card image={img6} postSlug="Your are very awesome" />
-        <Card image={img7} postSlug="Your are very awesome" />
+        <Card image={img1} postSlug="you" />
+        <Card image={img2} postSlug="you" />
+        <Card image={img3} postSlug="you" />
+        <Card image={img4} postSlug="you" />
+        <Card image={img5} postSlug="you" />
+        <Card image={img6} postSlug="you" />
+        <Card image={img7} postSlug="you" />
       </div>
       <div className="flex gap-2 justify-center mt-3">
         <Button noMoreInPrevious>Previous</Button>
