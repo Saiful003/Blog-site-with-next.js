@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { IRes } from "./signIn";
+import { IRes } from "./signin";
 
 export default function getLoginTitle(
   req: NextApiRequest,
