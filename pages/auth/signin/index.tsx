@@ -3,7 +3,7 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import FormHolder from "../../../components/Form/FormHolder";
 import CustomInput from "../../../components/Form/Input";
 import LogSignTemp from "../../../components/Form/LogSignTemp";
-import { IRes } from "../../api/signIn";
+import { IRes } from "../../api/signin";
 
 interface Inputs {
   firstname: string;
