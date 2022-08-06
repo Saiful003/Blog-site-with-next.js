@@ -9,6 +9,7 @@ interface Inputs {
   firstname: string;
   lastname: string;
   email: string;
+  age: number;
 }
 
 interface IProps {
@@ -20,7 +21,7 @@ function SignIn({ data }: IProps) {
     register,
     handleSubmit,
     formState: {
-      errors: { firstname, lastname, email },
+      errors: { firstname, lastname, email, age },
     },
   } = useForm<Inputs>();
 
@@ -63,6 +64,14 @@ function SignIn({ data }: IProps) {
             {...register("email", {
               required: "This email field is required.",
             })}
+          />
+          <CustomInput
+            isError={age?.type === "required"}
+            errorMessage={age?.message!}
+            type="number"
+            placeholder="Enter your age"
+            label="Age"
+            {...register("age", { required: "Please Enter your age" })}
           />
           <button
             className=" border w-full bg-emerald-400 hover:bg-emerald-500 text-white font-medium py-1"
