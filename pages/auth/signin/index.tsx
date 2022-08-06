@@ -21,7 +21,7 @@ interface Inputs {
 }
 
 function SignIn() {
-  const { data } = useSwr<IRes[]>("/api/products", fetcher, { suspense: true });
+  const { data } = useSwr<IRes[]>("/api/products", fetcher);
   const {
     register,
     handleSubmit,
