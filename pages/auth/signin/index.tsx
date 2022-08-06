@@ -101,5 +101,6 @@ export async function getStaticProps() {
     props: {
       data,
     },
+    fallback: true,
   };
 }
