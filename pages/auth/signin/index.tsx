@@ -3,6 +3,7 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import FormHolder from "../../../components/Form/FormHolder";
 import Input from "../../../components/Form/Input";
 import LogSignTemp from "../../../components/Form/LogSignTemp";
+import { IRes } from "../../api/signIn";
 
 interface Inputs {
   firstname: string;
@@ -10,7 +11,11 @@ interface Inputs {
   email: string;
 }
 
-function SignIn() {
+interface IProps {
+  data: IRes;
+}
+
+function SignIn({ data }: IProps) {
   const {
     register,
     handleSubmit,
@@ -23,7 +28,7 @@ function SignIn() {
   const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
 
   return (
-    <LogSignTemp role="Please Sign In">
+    <LogSignTemp role={data.title}>
       <FormHolder>
         <form
           className=" flex flex-col gap-3"
@@ -69,6 +74,15 @@ function SignIn() {
       </FormHolder>
     </LogSignTemp>
   );
+}
+
+export async function getStaticProps() {
+  const res = await fetch("http://localhost:3000/api/signin");
+  const data = await res.json();
+
+  return {
+    props: { data },
+  };
 }
 
 export default SignIn;
