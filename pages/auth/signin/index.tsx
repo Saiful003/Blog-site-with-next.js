@@ -4,6 +4,14 @@ import FormHolder from "../../../components/Form/FormHolder";
 import CustomInput from "../../../components/Form/Input";
 import LogSignTemp from "../../../components/Form/LogSignTemp";
 import { IRes } from "../../../types";
+import useSwr from "swr";
+
+// fetcher function
+
+const fetcher = async (url: string) => {
+  const res = await fetch(url);
+  return await res.json();
+};
 
 interface Inputs {
   firstname: string;
@@ -12,11 +20,8 @@ interface Inputs {
   age: number;
 }
 
-interface IProps {
-  data: IRes[];
-}
-
-function SignIn({ data }: IProps) {
+function SignIn() {
+  const { data } = useSwr<IRes[]>("/api/products", fetcher);
   const {
     register,
     handleSubmit,
@@ -81,7 +86,7 @@ function SignIn({ data }: IProps) {
           </button>
         </form>
       </FormHolder>
-      {data.map((product) => (
+      {data?.map((product) => (
         <div key={product.id}>
           <h2> {product.servername} </h2>
           <p> {product.data} </p>
@@ -93,14 +98,3 @@ function SignIn({ data }: IProps) {
 }
 
 export default SignIn;
-
-export async function getStaticProps() {
-  const res = await fetch("http://localhost:3000/api/products");
-  const data = await res.json();
-  return {
-    props: {
-      data,
-    },
-    fallback: false,
-  };
-}
