@@ -35,4 +35,5 @@ const CustomInput = forwardRef<HTMLInputElement, IProps>(
     );
   }
 );
+CustomInput.displayName = "CustomComponent";
 export default CustomInput;
