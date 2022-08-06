@@ -3,6 +3,7 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import FormHolder from "../../../components/Form/FormHolder";
 import CustomInput from "../../../components/Form/Input";
 import LogSignTemp from "../../../components/Form/LogSignTemp";
+import { IRes } from "../../../types";
 
 interface Inputs {
   firstname: string;
@@ -10,7 +11,11 @@ interface Inputs {
   email: string;
 }
 
-function SignIn() {
+interface IProps {
+  data: IRes[];
+}
+
+function SignIn({ data }: IProps) {
   const {
     register,
     handleSubmit,
@@ -67,8 +72,25 @@ function SignIn() {
           </button>
         </form>
       </FormHolder>
+      {data.map((product) => (
+        <div>
+          <h2> {product.servername} </h2>
+          <p> {product.data} </p>
+          <p> {product.message} </p>
+        </div>
+      ))}
     </LogSignTemp>
   );
 }
 
 export default SignIn;
+
+export async function getStaticProps() {
+  const res = await fetch("http://localhost:3000/api/products");
+  const data = await res.json();
+  return {
+    props: {
+      data,
+    },
+  };
+}
