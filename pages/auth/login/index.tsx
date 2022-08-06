@@ -3,6 +3,7 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import FormHolder from "../../../components/Form/FormHolder";
 import LogSignTemp from "../../../components/Form/LogSignTemp";
 import { IRes } from "../../api/signIn";
+import CustomInput from "../../../components/Form/Input";
 
 interface Inputs {
   email: string;
@@ -33,7 +34,7 @@ export default function Login({ data }: IProps) {
             className="flex flex-col gap-3"
             onSubmit={handleSubmit(onSubmit)}
           >
-            <Input
+            <CustomInput
               label="Email"
               {...register("email", { required: "Please enter your email" })}
               type="email"
@@ -41,7 +42,7 @@ export default function Login({ data }: IProps) {
               isError={email?.type === "required"}
               errorMessage={email?.message!}
             />
-            <Input
+            <CustomInput
               label="Password"
               {...register("password", {
                 required: "Please enter your password",

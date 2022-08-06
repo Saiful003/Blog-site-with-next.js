@@ -10,7 +10,7 @@ interface IProps {
   errorMessage: string;
 }
 
-const Input = forwardRef<HTMLInputElement, IProps>(
+const CustomInput = forwardRef<HTMLInputElement, IProps>(
   ({ label, name, type, placeholder, isError, errorMessage, ...rest }, ref) => {
     return (
       <div>
@@ -35,4 +35,4 @@ const Input = forwardRef<HTMLInputElement, IProps>(
     );
   }
 );
-export default Input;
+export default CustomInput;

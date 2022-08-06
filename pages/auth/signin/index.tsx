@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import FormHolder from "../../../components/Form/FormHolder";
-import Input from "../../../components/Form/Input";
+import CustomInput from "../../../components/Form/Input";
 import LogSignTemp from "../../../components/Form/LogSignTemp";
 import { IRes } from "../../api/signIn";
 
@@ -34,7 +34,7 @@ function SignIn({ data }: IProps) {
           className=" flex flex-col gap-3"
           onSubmit={handleSubmit(onSubmit)}
         >
-          <Input
+          <CustomInput
             isError={firstname?.type === "required"}
             errorMessage={firstname?.message!}
             type="text"
@@ -44,7 +44,7 @@ function SignIn({ data }: IProps) {
               required: "This first name field is required.",
             })}
           />
-          <Input
+          <CustomInput
             label="Last Name"
             isError={lastname?.type === "required"}
             errorMessage={lastname?.message!}
@@ -54,7 +54,7 @@ function SignIn({ data }: IProps) {
               required: "This last name field is required.",
             })}
           />
-          <Input
+          <CustomInput
             label="Email"
             isError={email?.type === "required"}
             errorMessage={email?.message!}
