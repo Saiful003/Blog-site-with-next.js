@@ -10,6 +10,7 @@ export default function getAllProducts(
       message: "This is a message",
       data: "This response will contain some dummy data",
       servername: " This is built in next.js server ",
+      id: 1,
     },
   ]);
 }

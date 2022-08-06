@@ -82,7 +82,7 @@ function SignIn({ data }: IProps) {
         </form>
       </FormHolder>
       {data.map((product) => (
-        <div>
+        <div key={product.id}>
           <h2> {product.servername} </h2>
           <p> {product.data} </p>
           <p> {product.message} </p>
