@@ -1,17 +1,7 @@
-import React, { Suspense } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import FormHolder from "../../../components/Form/FormHolder";
 import CustomInput from "../../../components/Form/Input";
 import LogSignTemp from "../../../components/Form/LogSignTemp";
-import { IRes } from "../../../types";
-import useSwr from "swr";
-
-// fetcher function
-
-const fetcher = async (url: string) => {
-  const res = await fetch(url);
-  return await res.json();
-};
 
 interface Inputs {
   firstname: string;
@@ -21,7 +11,6 @@ interface Inputs {
 }
 
 function SignIn() {
-  const { data } = useSwr<IRes[]>("/api/products", fetcher);
   const {
     register,
     handleSubmit,
@@ -32,10 +21,6 @@ function SignIn() {
 
   // onSubmit function
   const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
-
-  if (!data) {
-    return <h2> Loading... </h2>;
-  }
 
   return (
     <LogSignTemp role="Please Sign In">
@@ -90,14 +75,6 @@ function SignIn() {
           </button>
         </form>
       </FormHolder>
-
-      {data.map((product) => (
-        <div key={product.id}>
-          <h2> {product.servername} </h2>
-          <p> {product.data} </p>
-          <p> {product.message} </p>
-        </div>
-      ))}
     </LogSignTemp>
   );
 }

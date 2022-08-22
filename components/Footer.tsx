@@ -3,11 +3,17 @@ import { RiFacebookFill } from "react-icons/ri";
 import { AiOutlineTwitter, AiFillInstagram } from "react-icons/ai";
 import { ImLinkedin2 } from "react-icons/im";
 import SocialLink from "./SocialLink";
+import { useTheme } from "../hooks/useTheme";
 
 function Footer() {
+  const { isLightTheme } = useTheme();
   return (
     <footer>
-      <div className="flex flex-col justify-center gap-2 md:flex-row md:items-center md:justify-between h-[80px] border-t">
+      <div
+        className={`flex flex-col justify-center gap-2 md:flex-row md:items-center md:justify-between h-[80px] border-t ${
+          !isLightTheme && "border-t-gray-800"
+        }`}
+      >
         <div className="flex items-center justify-between  gap-3">
           <div className="border-r-none md:border-r pr-3">
             <Logo inFooter />

@@ -18,7 +18,7 @@ function Header() {
   return (
     <header
       className={`border-b sticky top-0 z-50 ${
-        isLightTheme ? "bg-white" : "bg-black"
+        isLightTheme ? "bg-white" : "bg-black border-b-gray-800"
       }`}
     >
       <div className="h-[80px] relative flex items-center justify-between">
